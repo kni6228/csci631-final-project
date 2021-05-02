@@ -1,0 +1,86 @@
+roof
+bar
+mixer
+stacker
+swimming pool
+vegetabele bag
+electric welding
+bed
+crane claw
+object
+other people/animal
+crane
+none
+snow
+stove
+ladder
+tree
+concrete floor
+storage rack
+ramp
+slope
+skateboard
+electric welding machine
+treadmill
+water pipe
+horse
+forklift
+fuel
+half pipe
+stick
+paint buckets
+person
+books
+cup
+box
+heavy machinery
+cargo truck
+fence
+other sports machine
+surfing board
+table
+other sports equipment
+hay
+wood
+gloves
+bike or motorbike
+wave
+miuddy field
+cement bag
+statue
+pan
+ball
+bicycle
+cargo
+kicker
+chair
+door
+tractor
+glass
+cart
+heels
+wall
+vehicle
+television
+barbecue grill
+steel bar
+rail
+other
+dumbbells/barbells
+kegerator
+straightener
+truck
+goods cover 
+house
+excavator
+wheel
+gravel
+boat/kayak/motorboat
+oil tank
+traffic light
+vending machine
+tray
+unicycle
+food
+other kitchen equipment
+lighter
