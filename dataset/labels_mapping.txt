@@ -1,0 +1,78 @@
+0:object
+1:electric welding
+2:heels
+3:wood
+4:straightener
+5:barbecue grill
+6:lighter
+7:food
+8:fuel
+9:box
+10:person
+11:stove
+12:other kitchen equipment
+13:books
+15:mixer
+16:pan
+17:tray
+18:table
+19:other people/animal
+20:chair
+21:swimming pool
+22:vehicle
+23:cargo
+24:fence
+25:statue
+26:bike or motorbike
+29:heavy machinery
+30:cart
+31:horse
+32:unicycle
+33:vending machine
+34:glass
+35:bar
+36:other sports equipment
+37:crane claw
+38:boat/kayak/motorboat
+39:door
+41:crane
+42:none
+43:forklift
+44:truck
+45:oil tank
+46:cement bag
+47:excavator
+48:slope
+49:snow
+50:steel bar
+51:electric welding machine
+55:concrete floor
+56:wheel
+57:tractor
+58:hay
+59:stacker
+60:goods cover
+61:gravel
+62:ramp
+63:cargo truck
+65:traffic light
+66:water pipe
+67:wall
+68:television
+69:house
+70:ladder
+71:bed
+72:roof
+73:stick
+74:half pipe
+75:tree
+76:kegerator
+77:storage rack
+78:skateboard
+79:other sports machine
+80:ball
+81:surfing board
+82:kicker
+83:wave
+84:treadmill
+85:dumbbells/barbells
