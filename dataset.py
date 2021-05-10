@@ -1,6 +1,14 @@
 import os
+from os.path import abspath, dirname, isdir, join
 import cv2
 from sklearn.model_selection import train_test_split
+from torch.utils.data import Dataset
+import platform
+from torchvision import transforms
+from skimage import io
+
+DATASET_PATH = './dataset/{}'
+LABELS_PATH = abspath('./dataset/labels_mapping.txt')
 
 
 def processData():
@@ -105,6 +113,74 @@ def processImage(file_name,category,input,output):
     # print(image)
     image_output_path = output
     cv2.imwrite(os.path.join(image_output_path, file_name), image)
+
+
+def check_path(file_path):
+    dir_path = dirname(file_path)
+    if not isdir(dir_path):
+        print('Creating directory {}'.format(dir_path))
+        os.mkdir(dir_path)
+
+
+class FailureImageDataset(Dataset):
+    def __init__(self, phase='train', pretrained_model='densenet'):
+        global DATASET_PATH
+        self.dataset_path = abspath(DATASET_PATH.format(phase))
+        check_path(self.dataset_path)
+
+        self.count = 0
+        self.file_paths = []
+        self.process_files()
+
+        self.delimiter = ''
+        self.set_delimiter()
+
+        self.transform = transforms.Compose([
+            transforms.Resize(256),
+            transforms.CenterCrop(224),
+            transforms.ToTensor(),
+            transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])
+        ])
+        if pretrained_model != 'densenet':
+            print('Currently only densenet is supported')
+
+        self.label_dict = {}
+        self.build_label_dict()
+
+    def __getitem__(self, idx):
+        img_path = self.file_paths[idx]
+        img = io.imread(img_path)
+        img = self.transform(img)
+        label = self.get_label_from_path(img_path)
+        return img, label
+
+    def __len__(self):
+        return self.count
+
+    def process_files(self):
+        for sub_dir in os.listdir(self.dataset_path):
+            sub_dir_path = join(self.dataset_path, sub_dir)
+            self.count += len(os.listdir(sub_dir_path))
+            for file_name in os.listdir(sub_dir_path):
+                self.file_paths.append(abspath(file_name))
+
+    def set_delimiter(self):
+        if platform.system() == 'Windows':
+            self.delimiter = '\\'
+        else:
+            self.delimiter = '/'
+
+    def get_label_from_path(self, file_path):
+        return int(dirname(file_path).split(self.delimiter)[-1])
+
+    def build_label_dict(self):
+        global LABELS_PATH
+        for line in open(LABELS_PATH):
+            idx, label = line.split(':')
+            self.label_dict[idx] = label
+
+    def get_label_dict(self):
+        return self.label_dict
 
 
 if __name__ == '__main__':

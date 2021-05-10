@@ -16,7 +16,7 @@ def images_for_boundingboxDetection():
     directory_contents = os.listdir(original_data_path)
     print(directory_contents)
 
-    with open("information.csv") as csv_file:
+    with open("data/information.csv") as csv_file:
         csv_reader = csv.reader(csv_file)
         for row in csv_reader:
             folder = row[0]
@@ -77,7 +77,7 @@ def images_for_objectDetection():
     directory_contents = os.listdir(original_data_path)
     print(directory_contents)
 
-    with open("information.csv") as csv_file:
+    with open("data/information.csv") as csv_file:
         csv_reader = csv.reader(csv_file)
         for row in csv_reader:
             folder = row[0]
