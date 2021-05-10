@@ -1,14 +1,14 @@
 import os
+import platform
 from os.path import abspath, dirname, isdir, join
+
 import cv2
+from skimage import io
 from sklearn.model_selection import train_test_split
 from torch.utils.data import Dataset
-import platform
 from torchvision import transforms
-from skimage import io
 
-DATASET_PATH = './dataset/{}'
-LABELS_PATH = abspath('./dataset/labels_mapping.txt')
+from constants import DATASET_PATH, LABELS_PATH
 
 
 def processData():
@@ -95,7 +95,7 @@ def generateTrainTestVal(mappings):
                     processImage(image,category,data_path,val_dir)
 
             else:
-               categories_less_images.append(category)
+                categories_less_images.append(category)
 
     print(categories_less_images)
     file = open(os.path.join(output_path, "labels_mapping.txt"), "w+")
@@ -124,7 +124,6 @@ def check_path(file_path):
 
 class FailureImageDataset(Dataset):
     def __init__(self, phase='train', pretrained_model='densenet'):
-        global DATASET_PATH
         self.dataset_path = abspath(DATASET_PATH.format(phase))
         check_path(self.dataset_path)
 
@@ -136,9 +135,9 @@ class FailureImageDataset(Dataset):
         self.set_delimiter()
 
         self.transform = transforms.Compose([
+            transforms.ToTensor(),
             transforms.Resize(256),
             transforms.CenterCrop(224),
-            transforms.ToTensor(),
             transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])
         ])
         if pretrained_model != 'densenet':
@@ -162,7 +161,7 @@ class FailureImageDataset(Dataset):
             sub_dir_path = join(self.dataset_path, sub_dir)
             self.count += len(os.listdir(sub_dir_path))
             for file_name in os.listdir(sub_dir_path):
-                self.file_paths.append(abspath(file_name))
+                self.file_paths.append(join(sub_dir_path, file_name))
 
     def set_delimiter(self):
         if platform.system() == 'Windows':
@@ -174,7 +173,6 @@ class FailureImageDataset(Dataset):
         return int(dirname(file_path).split(self.delimiter)[-1])
 
     def build_label_dict(self):
-        global LABELS_PATH
         for line in open(LABELS_PATH):
             idx, label = line.split(':')
             self.label_dict[idx] = label
