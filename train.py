@@ -1,4 +1,3 @@
-import os
 import time
 
 import torch
@@ -9,8 +8,8 @@ from torch.utils.data import DataLoader
 
 from constants import NUM_CLASSES, DEVICE, FEATURE_EXTRACT, MODEL_PATH
 from dataset import FailureImageDataset
-from visuals import plot_learning_curve
 from test import test
+from visuals import plot_learning_curve
 
 
 def get_model(num_classes, feature_extracting=True):

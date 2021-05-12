@@ -21,8 +21,8 @@ def processData():
     directory_contents = os.listdir(data_path)
     mapping = 0
     for directory in directory_contents:
-        truth_file = os.path.join(data_path,directory)
-        truth_file = os.path.join(truth_file,"truth.txt")
+        truth_file = os.path.join(data_path, directory)
+        truth_file = os.path.join(truth_file, "truth.txt")
         if os.path.exists(truth_file):
             object_label = open(truth_file).read()
             print(object_label)
@@ -31,26 +31,27 @@ def processData():
                 categories_mappings[object_label] = mapping
                 mapping += 1
             object_mapping = categories_mappings.get(object_label)
-            for file in os.listdir(os.path.join(data_path,directory)):
+            for file in os.listdir(os.path.join(data_path, directory)):
                 if file != "truth.txt":
                     if object_mapping not in images_in_category:
                         images_in_category[object_mapping] = 0
                     else:
                         images_in_category[object_mapping] = images_in_category[object_mapping] + 1
 
-                    image_input_path = os.path.join(data_path,directory)
-                    image_input_path = os.path.join(image_input_path,file)
-                    #print(image_input_path)
+                    image_input_path = os.path.join(data_path, directory)
+                    image_input_path = os.path.join(image_input_path, file)
+                    # print(image_input_path)
                     image = cv2.imread(image_input_path)
-                    #print(image)
-                    image_output_path = os.path.join(output_path,str(object_mapping))
+                    # print(image)
+                    image_output_path = os.path.join(output_path, str(object_mapping))
                     if not os.path.exists(image_output_path):
                         os.mkdir(image_output_path)
-                    cv2.imwrite(os.path.join(image_output_path, str(images_in_category[object_mapping]) + ".jpg"), image)
+                    cv2.imwrite(os.path.join(image_output_path, str(images_in_category[object_mapping]) + ".jpg"),
+                                image)
 
     file = open(os.path.join(output_path, "labels_mapping.txt"), "w+")
-    for key,values in categories_mappings.items():
-        file.write(str(values) +":"+ key+ "\n")
+    for key, values in categories_mappings.items():
+        file.write(str(values) + ":" + key + "\n")
     file.close()
 
     return categories_mappings
@@ -72,7 +73,7 @@ def generateTrainTestVal(mappings):
         if category != "labels_mapping.txt":
             file_path = os.path.join(data_path, category)
             image_files = [name for name in os.listdir(file_path)]
-            if len(image_files)>= 3:
+            if len(image_files) >= 3:
                 train_and_valid, test = train_test_split(image_files, test_size=0.2, random_state=42)
                 train, val = train_test_split(train_and_valid, test_size=0.2, random_state=42)
 
@@ -86,7 +87,7 @@ def generateTrainTestVal(mappings):
                         label = key
 
                 new_category_mapping[new_folder_category] = label
-                new_folder_category +=1
+                new_folder_category += 1
 
                 if not os.path.exists(train_dir):
                     os.mkdir(train_dir)
@@ -96,16 +97,16 @@ def generateTrainTestVal(mappings):
                     os.mkdir(test_dir)
 
                 for image in train:
-                    processImage(image,category,data_path,train_dir)
+                    processImage(image, category, data_path, train_dir)
 
                 for image in test:
-                    processImage(image,category,data_path,test_dir)
+                    processImage(image, category, data_path, test_dir)
 
                 for image in val:
-                    processImage(image,category,data_path,val_dir)
+                    processImage(image, category, data_path, val_dir)
 
             else:
-               categories_less_images.append(category)
+                categories_less_images.append(category)
 
     print(len(categories_less_images))
     file = open(os.path.join(output_path, "labels_mapping.txt"), "w+")
@@ -114,7 +115,7 @@ def generateTrainTestVal(mappings):
     file.close()
 
 
-def processImage(file_name,category,input,output):
+def processImage(file_name, category, input, output):
     image_input_path = os.path.join(input, category)
     image_input_path = os.path.join(image_input_path, file_name)
     # print(image_input_path)

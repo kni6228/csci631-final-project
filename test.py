@@ -1,11 +1,12 @@
 import timeit
 from os.path import exists
 
+import torch
+import torch.nn as nn
+from torch.utils.data import DataLoader
+
 from constants import *
 from dataset import FailureImageDataset
-import torch
-from torch.utils.data import DataLoader
-import torch.nn as nn
 
 
 def test(model, dataloaders, criterion, phase='test'):
