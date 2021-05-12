@@ -15,7 +15,6 @@ def test(model, dataloaders, criterion, phase='test'):
     model.eval()
     running_loss = 0.0
     running_corrects = 0.0
-    result = []
     test_size = len(dataloaders[phase].dataset)
 
     start_time = timeit.default_timer()
