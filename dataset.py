@@ -65,6 +65,8 @@ def generateTrainTestVal(mappings):
         os.mkdir(os.path.join(output_path, 'train'))
         os.mkdir(os.path.join(output_path, 'val'))
         os.mkdir(os.path.join(output_path, 'test'))
+    new_folder_category = 0
+    new_category_mapping = {}
 
     for category in os.listdir(data_path):
         if category != "labels_mapping.txt":
@@ -74,9 +76,17 @@ def generateTrainTestVal(mappings):
                 train_and_valid, test = train_test_split(image_files, test_size=0.2, random_state=42)
                 train, val = train_test_split(train_and_valid, test_size=0.2, random_state=42)
 
-                train_dir = os.path.join(output_path, 'train', category)
-                val_dir = os.path.join(output_path, 'val', category)
-                test_dir = os.path.join(output_path, 'test', category)
+                train_dir = os.path.join(output_path, 'train', str(new_folder_category))
+                val_dir = os.path.join(output_path, 'val', str(new_folder_category))
+                test_dir = os.path.join(output_path, 'test', str(new_folder_category))
+
+                label = None
+                for key, value in mappings.items():
+                    if str(value) == category:
+                        label = key
+
+                new_category_mapping[new_folder_category] = label
+                new_folder_category +=1
 
                 if not os.path.exists(train_dir):
                     os.mkdir(train_dir)
@@ -95,13 +105,12 @@ def generateTrainTestVal(mappings):
                     processImage(image,category,data_path,val_dir)
 
             else:
-                categories_less_images.append(category)
+               categories_less_images.append(category)
 
-    print(categories_less_images)
+    print(len(categories_less_images))
     file = open(os.path.join(output_path, "labels_mapping.txt"), "w+")
-    for key, values in mappings.items():
-        if str(values) not in categories_less_images:
-            file.write(str(values) + ":" + key + "\n")
+    for key, values in new_category_mapping.items():
+        file.write(str(key) + ":" + str(values) + "\n")
     file.close()
 
 
