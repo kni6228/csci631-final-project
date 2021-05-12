@@ -1,78 +1,93 @@
 0:object
 1:electric welding
-2:heels
-3:wood
-4:straightener
-5:barbecue grill
-6:lighter
-7:food
-8:fuel
-9:box
-10:person
-11:stove
-12:other kitchen equipment
-13:books
-15:mixer
-16:pan
-17:tray
-18:table
-19:other people/animal
-20:chair
-21:swimming pool
-22:vehicle
-23:cargo
-24:fence
-25:statue
-26:bike or motorbike
-29:heavy machinery
-30:cart
-31:horse
-32:unicycle
-33:vending machine
-34:glass
-35:bar
-36:other sports equipment
-37:crane claw
-38:boat/kayak/motorboat
-39:door
-41:crane
-42:none
-43:forklift
-44:truck
-45:oil tank
-46:cement bag
-47:excavator
-48:slope
-49:snow
-50:steel bar
-51:electric welding machine
-55:concrete floor
-56:wheel
+2:pan
+3:box
+4:stove
+5:other kitchen equipment
+6:books
+7:other
+8:mixer
+9:tray
+10:table
+11:other people/animal
+12:heels
+13:chair
+14:swimming pool
+15:vehicle
+16:cargo
+17:fence
+18:statue
+19:bike or motorbike
+20:rail
+21:crane
+22:person
+23:none
+24:portable bath
+25:flush
+26:cart
+27:heavy machinery
+28:horse
+29:unicycle
+30:vending machine
+31:glass
+32:bar
+33:wood
+34:other sports equipment
+35:crane claw
+36:boat/kayak/motorboat
+37:door
+38:cup
+39:tree
+40:wheel
+41:forklift
+42:oil tank
+43:truck
+44:straightener
+45:cement bag
+46:excavator
+47:slope
+48:snow
+49:steel bar
+50:electric welding machine
+51:gloves
+52:vegetabele bag
+53:paint buckets
+54:concrete floor
+55:barbecue grill
+56:hay
 57:tractor
-58:hay
+58:goods cover
 59:stacker
-60:goods cover
-61:gravel
-62:ramp
-63:cargo truck
-65:traffic light
-66:water pipe
-67:wall
-68:television
-69:house
-70:ladder
-71:bed
-72:roof
-73:stick
-74:half pipe
-75:tree
-76:kegerator
-77:storage rack
-78:skateboard
-79:other sports machine
-80:ball
-81:surfing board
-82:kicker
-83:wave
-84:treadmill
-85:dumbbells/barbells
+60:gravel
+61:ramp
+62:cargo truck
+63:miuddy field
+64:traffic light
+65:scaffolding
+66:lighter
+67:ship
+68:flame
+69:wooden stick
+70:concrete mixer
+71:water pipe
+72:wall
+73:television
+74:house
+75:ladder
+76:bed
+77:food
+78:roof
+79:stick
+80:half pipe
+81:kegerator
+82:storage rack
+83:skateboard
+84:other sports machine
+85:ball
+86:surfing board
+87:kicker
+88:fuel
+89:wave
+90:treadmill
+91:dumbbells/barbells
+92:stairs
