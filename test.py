@@ -1,10 +1,14 @@
-from constants import *
-import torch
 import timeit
+from os.path import exists
+
+from constants import *
+from dataset import FailureImageDataset
+import torch
+from torch.utils.data import DataLoader
+import torch.nn as nn
 
 
-def test(model, dataloaders, criterion, phase):
-
+def test(model, dataloaders, criterion, phase='test'):
     criterion.to(DEVICE)
 
     model.eval()
@@ -15,7 +19,7 @@ def test(model, dataloaders, criterion, phase):
 
     start_time = timeit.default_timer()
 
-    for inputs,labels in dataloaders[phase]:
+    for inputs, labels in dataloaders[phase]:
         inputs = inputs.to(DEVICE)
         labels = labels.to(DEVICE)
         with torch.no_grad():
@@ -25,7 +29,6 @@ def test(model, dataloaders, criterion, phase):
             running_loss += loss.item()
             running_corrects += torch.sum(preds == labels)
 
-
     epoch_loss = running_loss / test_size
     epoch_acc = running_corrects.double() / test_size
     print("[test] Loss: {} Acc: {}".format(epoch_loss, epoch_acc))
@@ -33,13 +36,13 @@ def test(model, dataloaders, criterion, phase):
     print("Execution time: " + str(stop_time - start_time) + "\n")
 
 
+def main():
+    if exists(MODEL_PATH):
+        model = torch.load(MODEL_PATH)
+        dataloaders = {'test': DataLoader(FailureImageDataset(phase='test'), 3, shuffle=True, num_workers=4)}
+        criterion = nn.CrossEntropyLoss()
+        test(model, dataloaders, criterion)
 
 
-
-
-
-
-
-
-
-
+if __name__ == '__main__':
+    main()
