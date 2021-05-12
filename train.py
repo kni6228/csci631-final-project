@@ -7,7 +7,7 @@ import torch.optim as optim
 import torchvision.models as models
 from torch.utils.data import DataLoader
 
-from constants import NUM_CLASSES, DEVICE, FEATURE_EXTRACT
+from constants import NUM_CLASSES, DEVICE, FEATURE_EXTRACT, MODEL_PATH
 from dataset import FailureImageDataset
 from visuals import plot_learning_curve
 from test import test
@@ -71,17 +71,17 @@ def train(model, dataloaders, criterion, optimizer, num_epochs=20):
 
             epoch_loss = running_loss / len(dataloaders[phase].dataset)
             epoch_acc = running_corrects.double() / len(dataloaders[phase].dataset)
-            print('{} Loss: {:.4f} Acc: {:.4f}'.format(phase, epoch_loss, epoch_acc))
+            print('{} loss: {:.4f} acc: {:.4f}'.format(phase, epoch_loss, epoch_acc))
 
             if phase == 'train':
-                train_acc_history.append(epoch_acc)
+                train_acc_history.append(epoch_acc.cpu().numpy())
             else:
-                val_acc_history.append(epoch_acc)
+                val_acc_history.append(epoch_acc.cpu().numpy())
 
         print()
 
     time_elapsed = time.time() - since
-    print('Training complete in {:.0f}m {:.0f}s'.format(time_elapsed // 60, time_elapsed % 60))
+    print('Training completed in {:.0f}m {:.0f}s'.format(time_elapsed // 60, time_elapsed % 60))
 
     return model, train_acc_history, val_acc_history
 
@@ -97,13 +97,14 @@ def main():
         for name, param in model.named_parameters():
             if param.requires_grad:
                 params_to_learn.append(param)
-    optimizer = optim.SGD(params_to_learn, lr=0.01, momentum=0.9)
+    optimizer = optim.SGD(params_to_learn, lr=0.1, momentum=0.9)
 
-    model, train_acc_history, val_acc_history = train(model, dataloaders, criterion, optimizer, num_epochs=1)
-    test(model,dataloaders,criterion,"test")
-    plot_learning_curve(train_acc_history, val_acc_history, num_epochs=20)
+    model, train_acc_history, val_acc_history = train(model, dataloaders, criterion, optimizer, num_epochs=25)
+    torch.save(model, MODEL_PATH)
+    plot_learning_curve(train_acc_history, val_acc_history, num_epochs=25)
+    test(model, dataloaders, criterion, 'test')
 
 
 if __name__ == '__main__':
-    os.environ['CUDA_VISIBLE_DEVICES'] = '8'
+    # os.environ['CUDA_VISIBLE_DEVICES'] = '8'
     main()

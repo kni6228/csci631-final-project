@@ -8,3 +8,4 @@ FEATURE_EXTRACT = True
 DATASET_PATH = './dataset/{}'
 LABELS_PATH = abspath('./dataset/labels_mapping.txt')
 LEARNING_CURVE_PATH = './graphs/learning_curve.png'
+MODEL_PATH = abspath('./model.pth')

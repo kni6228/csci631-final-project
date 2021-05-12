@@ -11,6 +11,6 @@ def plot_learning_curve(train_acc_history, val_acc_history, num_epochs=20):
     plt.plot(range(1, num_epochs + 1), train_acc_history, label='Train')
     plt.plot(range(1, num_epochs + 1), val_acc_history, label='Validation')
     plt.ylim((0, 1.))
-    plt.xticks(np.arange(1, num_epochs + 1, 1.0))
+    plt.xticks(np.arange(1, num_epochs + 1, np.ceil(num_epochs / 20)))
     plt.savefig(LEARNING_CURVE_PATH)
     plt.show()
