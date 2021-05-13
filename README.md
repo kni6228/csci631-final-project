@@ -1,4 +1,9 @@
-# csci631-final-project
-Final project for CSCI 631 (2205) @ RIT
+# CSCI 631 Final Project
 
-Authors: Karthik Iyer, Venkata Thanmai Mande
+## Authors
+* Karthik Iyer (kni6228@rit.edu)
+* Venkata Thanmai Mande (vm6710@rit.edu)
+
+## Usage
+* To train, evaluate, and see learning curve: `python3 train.py`
+* To test (post-training): `python3 test.py`
