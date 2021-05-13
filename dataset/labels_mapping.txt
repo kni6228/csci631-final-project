@@ -1,71 +1,79 @@
 0:object
 1:electric welding
-2:heels
-3:wood
-4:straightener
-5:barbecue grill
-6:lighter
-7:food
-8:fuel
-9:box
-10:person
-11:stove
-12:other kitchen equipment
-13:books
-15:mixer
-16:pan
-17:tray
-18:table
-19:other people/animal
-20:chair
-21:swimming pool
-22:vehicle
-23:cargo
-24:fence
-25:statue
-26:bike or motorbike
-29:heavy machinery
-30:cart
-31:horse
-32:unicycle
-33:vending machine
-34:glass
-35:bar
-36:other sports equipment
-37:crane claw
-38:boat/kayak/motorboat
-39:door
-41:crane
-42:none
-43:forklift
-44:truck
-45:oil tank
-46:cement bag
-47:excavator
-48:slope
-49:snow
-50:steel bar
-51:electric welding machine
-55:concrete floor
-56:wheel
-57:tractor
-58:hay
-59:stacker
-60:goods cover
-61:gravel
-62:ramp
-63:cargo truck
-65:traffic light
+2:pan
+3:box
+4:stove
+5:other kitchen equipment
+6:books
+7:mixer
+8:tray
+9:table
+10:other people/animal
+11:heels
+12:chair
+13:swimming pool
+14:vehicle
+15:cargo
+16:fence
+17:statue
+18:bike or motorbike
+19:rail
+20:crane
+21:person
+22:none
+23:portable bath
+24:flush
+25:cart
+26:heavy machinery
+27:horse
+28:unicycle
+29:vending machine
+30:glass
+31:bar
+32:wood
+33:other sports equipment
+34:crane claw
+35:boat/kayak/motorboat
+36:door
+37:tree
+38:wheel
+39:forklift
+40:oil tank
+41:truck
+42:straightener
+43:cement bag
+44:excavator
+45:slope
+46:snow
+47:steel bar
+48:electric welding machine
+49:vegetabele bag
+50:concrete floor
+51:barbecue grill
+52:hay
+53:tractor
+54:goods cover
+55:stacker
+56:gravel
+57:ramp
+58:cargo truck
+59:traffic light
+60:scaffolding
+61:lighter
+62:ship
+63:flame
+64:wooden stick
+65:concrete mixer
 66:water pipe
 67:wall
 68:television
 69:house
 70:ladder
 71:bed
-72:roof
-73:stick
-74:half pipe
-75:tree
+72:food
+73:roof
+74:stick
+75:half pipe
 76:kegerator
 77:storage rack
 78:skateboard
@@ -73,6 +81,8 @@
 80:ball
 81:surfing board
 82:kicker
-83:wave
-84:treadmill
-85:dumbbells/barbells
+83:fuel
+84:wave
+85:treadmill
+86:dumbbells/barbells
+87:stairs
