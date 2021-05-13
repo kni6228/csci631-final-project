@@ -2,7 +2,7 @@ from os.path import abspath
 
 import torch
 
-NUM_CLASSES = 93
+NUM_CLASSES = 88
 DEVICE = torch.device('cuda:0' if torch.cuda.is_available() else 'cpu')
 FEATURE_EXTRACT = True
 DATASET_PATH = './dataset/{}'

@@ -1,86 +1,94 @@
-roof
-bar
-mixer
-stacker
-swimming pool
 vegetabele bag
-electric welding
-bed
-crane claw
-object
-other people/animal
-crane
-none
-snow
-stove
-ladder
-tree
-concrete floor
-storage rack
-ramp
-slope
-skateboard
-electric welding machine
+heavy machinery
 treadmill
-water pipe
+barbecue grill
+stairs
+steel bar
+snow
+dumbbells/barbells
+stove
+cup
+glass
+television
+wheel
+crane claw
+wood
+excavator
+food
+cargo
+boat/kayak/motorboat
+lighter
+person
+gravel
+bicycle
+portable bath
+goods cover
+mixer
+storage rack
+cement bag
+other people/animal
+rail
+surfing board
+house
+cargo truck
+wooden stick
+other
+cart
+other kitchen equipment
+swimming pool
+gloves
+bar
 horse
-forklift
-fuel
-half pipe
+slope
+electric welding machine
+object
 stick
 paint buckets
-person
-books
-cup
-box
-heavy machinery
-cargo truck
-fence
-other sports machine
-surfing board
-table
-other sports equipment
-hay
-wood
-gloves
-bike or motorbike
-wave
-miuddy field
-cement bag
-statue
-pan
 ball
-bicycle
-cargo
-kicker
+vending machine
+miuddy field
+roof
+statue
+vehicle
+unicycle
+wave
+fuel
+half pipe
+concrete floor
+heels
+crane
+kegerator
+stacker
+scaffolding
+oil tank
 chair
 door
-tractor
-glass
-cart
-heels
-wall
-vehicle
-television
-barbecue grill
-steel bar
-rail
-other
-dumbbells/barbells
-kegerator
+electric welding
 straightener
+table
+fence
+wall
+books
+water pipe
+box
+flame
+other sports equipment
+none
+bike or motorbike
 truck
-goods cover 
-house
-excavator
-wheel
-gravel
-boat/kayak/motorboat
-oil tank
-traffic light
-vending machine
+ramp
+forklift
+tree
+kicker
+ship
+concrete mixer
+hay
+pan
+flush
+ladder
+other sports machine
 tray
-unicycle
-food
-other kitchen equipment
-lighter
+traffic light
+skateboard
+tractor
+bed

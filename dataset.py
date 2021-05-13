@@ -108,7 +108,7 @@ def generateTrainTestVal(mappings):
             else:
                 categories_less_images.append(category)
 
-    print(len(categories_less_images))
+    #print(len(categories_less_images))
     file = open(os.path.join(output_path, "labels_mapping.txt"), "w+")
     for key, values in new_category_mapping.items():
         file.write(str(key) + ":" + str(values) + "\n")

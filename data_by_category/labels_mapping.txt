@@ -1,20 +1,20 @@
 0:object
 1:electric welding
 2:heels
-3:wood
-4:straightener
-5:barbecue grill
-6:lighter
-7:food
-8:fuel
-9:box
-10:person
-11:stove
-12:other kitchen equipment
-13:books
-14:other
-15:mixer
-16:pan
+3:person
+4:wood
+5:straightener
+6:barbecue grill
+7:lighter
+8:food
+9:fuel
+10:pan
+11:box
+12:stove
+13:other kitchen equipment
+14:books
+15:other
+16:mixer
 17:tray
 18:table
 19:other people/animal
@@ -27,60 +27,68 @@
 26:bike or motorbike
 27:rail
 28:bicycle
-29:heavy machinery
-30:cart
-31:horse
-32:unicycle
-33:vending machine
-34:glass
-35:bar
-36:other sports equipment
-37:crane claw
-38:boat/kayak/motorboat
-39:door
-40:cup
-41:crane
-42:none
-43:forklift
-44:truck
-45:oil tank
-46:cement bag
-47:excavator
-48:slope
-49:snow
-50:steel bar
-51:electric welding machine
-52:gloves
-53:vegetabele bag
-54:paint buckets
-55:concrete floor
-56:wheel
-57:tractor
-58:hay
-59:stacker
-60:goods cover
-61:gravel
-62:ramp
-63:cargo truck
-64:miuddy field
-65:traffic light
-66:water pipe
-67:wall
-68:television
-69:house
-70:ladder
-71:bed
-72:roof
-73:stick
-74:half pipe
-75:tree
-76:kegerator
-77:storage rack
-78:skateboard
-79:other sports machine
-80:ball
-81:surfing board
-82:kicker
-83:wave
-84:treadmill
-85:dumbbells/barbells
+29:crane
+30:none
+31:portable bath
+32:flush
+33:cart
+34:heavy machinery
+35:horse
+36:unicycle
+37:vending machine
+38:glass
+39:bar
+40:other sports equipment
+41:crane claw
+42:boat/kayak/motorboat
+43:door
+44:cup
+45:tree
+46:wheel
+47:forklift
+48:oil tank
+49:truck
+50:cement bag
+51:excavator
+52:slope
+53:snow
+54:steel bar
+55:electric welding machine
+56:gloves
+57:vegetabele bag
+58:paint buckets
+59:concrete floor
+60:hay
+61:tractor
+62:goods cover
+63:stacker
+64:gravel
+65:ramp
+66:cargo truck
+67:miuddy field
+68:traffic light
+69:scaffolding
+70:ship
+71:flame
+72:wooden stick
+73:concrete mixer
+74:water pipe
+75:wall
+76:television
+77:house
+78:ladder
+79:bed
+80:roof
+81:stick
+82:half pipe
+83:kegerator
+84:storage rack
+85:skateboard
+86:other sports machine
+87:ball
+88:surfing board
+89:kicker
+90:wave
+91:treadmill
+92:dumbbells/barbells
+93:stairs
