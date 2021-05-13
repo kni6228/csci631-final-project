@@ -1,4 +1,5 @@
 import time
+import os
 
 import torch
 import torch.nn as nn
@@ -98,10 +99,10 @@ def main():
                 params_to_learn.append(param)
     optimizer = optim.SGD(params_to_learn, lr=0.1, momentum=0.9)
 
-    model, train_acc_history, val_acc_history = train(model, dataloaders, criterion, optimizer, num_epochs=50)
+    model, train_acc_history, val_acc_history = train(model, dataloaders, criterion, optimizer, num_epochs=25)
     torch.save(model, MODEL_PATH)
-    plot_learning_curve({'train': train_acc_history, 'val':val_acc_history}, num_epochs=50)
-    test(model, dataloaders, criterion, 'test')
+    plot_learning_curve({'train': train_acc_history, 'val': val_acc_history}, num_epochs=25)
+    # test(model, dataloaders, criterion, 'test')
 
 
 if __name__ == '__main__':
