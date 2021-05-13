@@ -1,7 +1,11 @@
+"""
+Authors: Karthik Iyer (kni6228@rit.edu), Venkata Thanmai Mande (vm6710@rit.edu)
+This file lets you test the model once it has been trained and saved.
+"""
+
 import timeit
 from os.path import exists
 
-import torch
 import torch.nn as nn
 from torch.utils.data import DataLoader
 
@@ -32,15 +36,13 @@ def test(model, dataloaders, criterion, phase='test'):
             labels = labels.detach().cpu().numpy()
             index = 0
 
-            while index<len(preds):
+            while index < len(preds):
                 if preds[index] == labels[index]:
                     if preds[index] in classified_by_category:
-                        classified_by_category[preds[index]] = classified_by_category[preds[index]]+1
+                        classified_by_category[preds[index]] = classified_by_category[preds[index]] + 1
                     else:
                         classified_by_category[preds[index]] = 1
                 index += 1
-
-
 
     epoch_loss = running_loss / test_size
     epoch_acc = running_corrects.double() / test_size

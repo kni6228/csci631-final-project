@@ -1,12 +1,20 @@
+"""
+Authors: Karthik Iyer (kni6228@rit.edu), Venkata Thanmai Mande (vm6710@rit.edu)
+This file contains helper methods to visualize different aspects of the model.
+Currently, only learning curve is supported.
+"""
+
+import os
+
 import matplotlib.pyplot as plt
 import numpy as np
-import os
+
 from constants import LEARNING_CURVE_PATH
 
 
 def plot_learning_curve(train_acc_history, val_acc_history, num_epochs=20):
     if not os.path.exists("./graphs"):
-       os.mkdir("./graphs")
+        os.mkdir("./graphs")
 
     plt.title('Learning Curve')
     plt.xlabel('Epochs')

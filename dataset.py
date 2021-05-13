@@ -1,3 +1,8 @@
+"""
+Authors: Karthik Iyer (kni6228@rit.edu), Venkata Thanmai Mande (vm6710@rit.edu)
+This file is responsible for preprocessing all the data, and defines a custom Dataset to be used by the model.
+"""
+
 import os
 import platform
 from os.path import abspath, dirname, isdir, join
@@ -108,7 +113,7 @@ def generateTrainTestVal(mappings):
             else:
                 categories_less_images.append(category)
 
-    #print(len(categories_less_images))
+    # print(len(categories_less_images))
     file = open(os.path.join(output_path, "labels_mapping.txt"), "w+")
     for key, values in new_category_mapping.items():
         file.write(str(key) + ":" + str(values) + "\n")

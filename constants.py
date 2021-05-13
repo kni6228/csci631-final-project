@@ -1,3 +1,8 @@
+"""
+Authors: Karthik Iyer (kni6228@rit.edu), Venkata Thanmai Mande (vm6710@rit.edu)
+This file houses useful constants used throughout the code.
+"""
+
 from os.path import abspath
 
 import torch

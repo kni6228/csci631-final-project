@@ -1,3 +1,8 @@
+"""
+Authors: Karthik Iyer (kni6228@rit.edu), Venkata Thanmai Mande (vm6710@rit.edu)
+This file lets you train the model, evaluate its performance, and generates a learning curve.
+"""
+
 import time
 
 import torch
@@ -101,9 +106,8 @@ def main():
     model, train_acc_history, val_acc_history = train(model, dataloaders, criterion, optimizer, num_epochs=25)
     torch.save(model, MODEL_PATH)
     plot_learning_curve(train_acc_history, val_acc_history, num_epochs=25)
-    # test(model, dataloaders, criterion, 'test')
+    test(model, dataloaders, criterion, 'test')
 
 
 if __name__ == '__main__':
-    # os.environ['CUDA_VISIBLE_DEVICES'] = '8'
     main()
